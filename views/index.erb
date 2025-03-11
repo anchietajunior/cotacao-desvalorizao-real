@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Cotação de Moedas</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <div class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+        <h1 class="text-2xl font-bold text-center mb-4">Cotação Atual</h1>
+        <p class="text-lg font-semibold">1 USD = <%= @currency_comparison[:usd_to_brl] %> BRL</p>
+        <p class="text-lg font-semibold">1 EUR = <%= @currency_comparison[:eur_to_brl] %> BRL</p>
+
+        <h2 class="text-xl font-bold mt-6">Comparação entre Moedas</h2>
+        <p>1 EUR equivale a <%= @currency_comparison[:eur_to_usd] %> USD</p>
+        <p>1 USD equivale a <%= @currency_comparison[:usd_to_eur] %> EUR</p>
+
+        <h2 class="text-xl font-bold mt-6">Valores Comuns Convertidos</h2>
+
+        <h3 class="text-lg font-semibold mt-4">Dólar para Real</h3>
+        <% @common_values[:usd_common].each do |key, value| %>
+          <p class="text-gray-700"><%= key %> = <span class="font-bold"><%= value %> BRL</span></p>
+        <% end %>
+
+        <h3 class="text-lg font-semibold mt-4">Euro para Real</h3>
+        <% @common_values[:eur_common].each do |key, value| %>
+          <p class="text-gray-700"><%= key %> = <span class="font-bold"><%= value %> BRL</span></p>
+        <% end %>
+    </div>
+
+</body>
+</html>
+
