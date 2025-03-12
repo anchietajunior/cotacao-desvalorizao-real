@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: exchange_rates_development
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
