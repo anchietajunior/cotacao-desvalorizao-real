@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  cotacao: 
+    build: .
+    ports: 
+      - "4567:4567"
+    # network_mode: "host"
+    networks:
+      - default-network
+  postgres:
+    image: postgres:16.4 
+    container_name: local-central-db-pgsql-container-16.4
+    restart: always
+    ports:
+      - "5432:5432" 
+    environment:
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: root 
+    networks:
+      - default-network
+
+    #caso queira que os dados continuem mesmo após restartar o container  
+    #volumes:
+    # - ./dbdata:/var/lib/postgresql/data
+
+networks:
+  default-network:
+    driver: bridge

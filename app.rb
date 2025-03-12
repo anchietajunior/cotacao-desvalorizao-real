@@ -8,6 +8,8 @@ require_relative 'lib/exchange_rate_fetcher'
 require_relative 'lib/exchange_rate_comparator'
 require_relative 'models/exchange_rate'
 
+set :bind, '0.0.0.0'
+
 get '/' do
   data = ExchangeRateFetcher.fetch
   comparator = ExchangeRateComparator.new(data)

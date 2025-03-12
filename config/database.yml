@@ -4,6 +4,6 @@ development:
   database: exchange_rates_development
   pool: 5
   username: postgres
-  password: postgres
-  host: localhost
+  password: root
+  host: postgres
   port: 5432
