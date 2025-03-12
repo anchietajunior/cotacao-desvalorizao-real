@@ -45,3 +45,18 @@ ruby app.rb
 ```shell
 bundle exec rake exchanges
 ```
+## Inicialiando Docker
+
+Para buildar a imagem do Docker, no terminal execute: 
+```shell
+docker compose up
+```
+
+## Inicializando o PostgreSQL no Docker
+
+Para iniciar o banco de dados dentro do Docker, com o aplicativo já rodando, no terminal execute respectivamente: 
+
+```
+docker-compose run cotacao bundle exec rake db:create
+docker-compose run cotacao bundle exec rake db:migrate
+```
