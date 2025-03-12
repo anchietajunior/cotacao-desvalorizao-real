@@ -33,3 +33,15 @@ No terminal, execute:
 ```shell
 ruby cotacaodia.rb
 ```
+
+## Executando a api:
+
+```shell
+ruby app.rb
+```
+
+## Visualizando as linhas da tabela exchanges
+
+```shell
+bundle exec rake exchanges
+```
